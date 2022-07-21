@@ -6,33 +6,40 @@ body{
 .header{
     font-size: 80px;
     font-weight: 700;
-    font-family: cursive;
     text-align: center;
     padding: 30px;
     background-color: rgb(47, 48, 54) ;
     border: 1px solid black;
+    font-family: 'Bilbo', cursive;
 }
 .placar{
     display: flex;
+    justify-content: center;
     padding:20px;
+    margin-right: auto;
+    margin-left: auto;
 }
 .placar div{
-    flex: 1;
     height: 400px;
-    width: 200px;
-    margin: 0 100px;
+    width: 400px;
+    margin: 0 30px;
     border-radius: 20px;
     background-color: rgb(47, 48, 54);
     border: 1px solid black;
+    flex-wrap: wrap;
 }
 button{
     border: 1px solid black;
     background-color: rgb(47, 48, 54);
     color: azure;
     height: 50px;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 600;
     border-radius: 5px;
+}
+button:active{
+    background-color: gray;
+    color: rgb(47, 48, 54);
 }
 .start{
     display: flex;
@@ -40,15 +47,28 @@ button{
     padding-bottom: 20px;
 }
 .start button{
-    width: 800px;
+    width: 840px;
 }
 .escolhas{
     display: flex;
+    justify-content: center;
     gap: 30px;
     margin: 0px 200px;
     margin-bottom: 30px;
 }
 .escolhas button{
-    flex: 1;
-
+    width: 260px;
+}
+.log{
+    background-color:rgb(47, 48, 54);
+    width: 840px;
+    font-size: 46px; 
+    font-weight: 400;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+ 
 }
