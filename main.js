@@ -44,8 +44,6 @@ function runRound(playerChoice){
 
     if (result === "Draw") {
         logSpan.textContent = `It's a draw! Both players choose ${computerChoice}`;
-        playerCounter++;
-        pcCounter++;
         playerCnt.textContent = playerCounter;
         pcCnt.textContent = pcCounter;
     }
