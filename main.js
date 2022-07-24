@@ -1,3 +1,6 @@
+var playerCounter = 0;
+var  pcCounter = 0;
+
 const beatenBy = {
     "Scissor": "Paper",
     "Rock": "Scissor",
@@ -17,9 +20,6 @@ function getComputerChoice(){
     
     return computerChoice
 }
-function getPlayerChoice(){
-    return prompt("Choose Rock, Paper or Scissor ");
-}
 
 function checkResult(playerChoice, computerChoice){
     if(playerChoice === computerChoice) return "Draw";    
@@ -27,38 +27,56 @@ function checkResult(playerChoice, computerChoice){
     else return "Loss";
 
 }
-function runRound(){
-    const playerChoice = getPlayerChoice();
+function runRound(playerChoice){
     const computerChoice = getComputerChoice();
     const result = checkResult(playerChoice, computerChoice);
+    
+    
+    const logSpan = document.querySelector ('.log');
+    const playerLog = document.querySelector('.playerLog'); 
+    const pcLog = document.querySelector ('.pcLog');
+    const playerCnt = document.querySelector('.playerCounter');
+    const pcCnt = document.querySelector('.pcCounter');
 
-    console.log(`Player: ${playerChoice}!`);
-    console.log(`Computer: ${computerChoice}!`);
 
-    if (result === "Draw") console.log(`It's a draw! Both players choose ${computerChoice}`);
-    if (result === "Win") console.log(`You Win! ${playerChoice} beats ${computerChoice}`);
-    if (result === "Loss") console.log(`You Lose! ${computerChoice} beats ${playerChoice}`);
+    playerLog.textContent = `Player: ${playerChoice}!`;
+    pcLog.textContent = `Computer: ${computerChoice}!`;
+
+    if (result === "Draw") {
+        logSpan.textContent = `It's a draw! Both players choose ${computerChoice}`;
+        playerCounter++;
+        pcCounter++;
+        playerCnt.textContent = playerCounter;
+        pcCnt.textContent = pcCounter;
+    }
+    if (result === "Win") {
+        logSpan.textContent = `You Win! ${playerChoice} beats ${computerChoice}`;
+        playerCounter++;
+        playerCnt.textContent = playerCounter;
+    }
+    if (result === "Loss") {    
+        logSpan.textContent = `You Lose! ${computerChoice} beats ${playerChoice}`;
+        pcCounter++;
+        pcCnt.textContent = pcCounter;
+    }
+    if(playerCounter >= 5){
+        playerCounter = 0;
+        pcCounter = 0;
+        playerCnt.textContent = playerCounter;
+        pcCnt.textContent = pcCounter;
+
+        logSpan.textContent = 'Player reached 5 points and wins the Match!';
+    }
+    else if(pcCounter >= 5){
+        playerCounter = 0;
+        pcCounter = 0;
+        playerCnt.textContent = playerCounter;
+        pcCnt.textContent = pcCounter;
+
+        logSpan.textContent = 'Computer reached 5 points and wins the Match!'
+    }
+
     return result;
 }
-function game(){
-    const maxWins = 3;
-    var playerPoints = 0;
-    var pcPoints = 0;
 
-    for (let i = 0; i < 5; i++) {
-        var result = runRound();
-        if (result === "Win") {
-            playerPoints++;
-        }
-        if (result === "Loss") {
-            pcPoints++;
-        }
-        if (result === "Draw") { 
-            pcPoints++;
-            playerPoints++;
-        }
-
-        console.log(`Placar : Player = ${playerPoints} PC = ${pcPoints}`);
-    }
-}
 

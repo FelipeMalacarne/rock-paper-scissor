@@ -12,6 +12,14 @@ body{
     border: 1px solid black;
     font-family: 'Bilbo', cursive;
 }
+.footer{
+    text-align: center;
+    padding: 30px;
+    background-color: rgb(47, 48, 54) ;
+    border: 1px solid black;
+    font-family: 'Bilbo', cursive;
+    font-size: 40px;
+}
 .placar{
     display: flex;
     justify-content: center;
@@ -19,7 +27,7 @@ body{
     margin-right: auto;
     margin-left: auto;
 }
-.placar div{
+.playerPlacar, .pcPlacar{
     height: 400px;
     width: 400px;
     margin: 0 30px;
@@ -27,6 +35,21 @@ body{
     background-color: rgb(47, 48, 54);
     border: 1px solid black;
     flex-wrap: wrap;
+}
+.userLabel{
+    text-align: center;
+    font-size: 32px;
+    padding: 10px;
+}
+.playerCounter, .pcCounter{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 200px;
+}
+.playerLog, .pcLog{
+    text-align: center;
+    font-size: 24px;
+    margin-top: 30px;
 }
 button{
     border: 1px solid black;
@@ -62,10 +85,11 @@ button:active{
 .log{
     background-color:rgb(47, 48, 54);
     width: 840px;
-    font-size: 46px; 
+    font-size: 36px; 
     font-weight: 400;
     margin-bottom: 20px;
     padding: 10px;
+    padding-left: 30px;
     border-radius: 5px;
     margin-left: auto;
     margin-right: auto;

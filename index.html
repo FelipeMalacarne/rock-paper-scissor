@@ -9,26 +9,32 @@
     <title>rock-paper-scissor</title>
 </head>
 <body>
-    <script src="./main.js"></script>
+
 
     <div class="header"> Rock Paper Scissors !!!</div>
 
     <div class="placar">
-        <div></div>
-        <div></div>
+        <div class="playerPlacar">
+            <div class="userLabel">Player:</div>
+            <div class="playerCounter">0</div>
+            <div class="playerLog"></div>
+        </div>
+        <div class="pcPlacar">
+            <div class="userLabel">Computer:</div>
+            <div class="pcCounter">0</div>
+            <div class="pcLog"></div>
+        </div>
     </div>
 
     <div class="log">AAA</div>
-
-    <div class="start">
-        <button onclick="game()">Start Game</button>
-    </div>
     
     <div class="escolhas">
-        <button>Rock</button>
-        <button>Paper</button>
-        <button>Scissors</button>
+        <button onclick="runRound('Rock')" class="rock">Rock</button>
+        <button onclick="runRound('Paper')" class="paper">Paper</button>
+        <button onclick="runRound('Scissor')"class="scissors">Scissors</button>
     </div>
-    
+
+    <div class="footer">github.com/FelipeMalacarne</div>
+    <script src="./main.js"></script>
 </body>
 </html>
