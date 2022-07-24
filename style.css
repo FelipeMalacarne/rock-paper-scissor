@@ -64,6 +64,11 @@ button:active{
     background-color: gray;
     color: rgb(47, 48, 54);
 }
+button:hover{
+    border: 1px solid azure;
+    cursor: pointer;
+    box-shadow:0px 1px 5px 0px azure;
+}
 .start{
     display: flex;
     justify-content: center;
